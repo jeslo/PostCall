@@ -14,6 +14,7 @@
 		D87C08BA248F70790097DC8A /* PostCallHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C08B9248F70790097DC8A /* PostCallHomeController.swift */; };
 		D87C08BC248F76420097DC8A /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C08BB248F76420097DC8A /* NetworkHandler.swift */; };
 		D87C08BE248F765B0097DC8A /* HomeDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C08BD248F765B0097DC8A /* HomeDataStruct.swift */; };
+		D87C08C0248FB2580097DC8A /* SampleDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C08BF248FB2580097DC8A /* SampleDataStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		D87C08B9248F70790097DC8A /* PostCallHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCallHomeController.swift; sourceTree = "<group>"; };
 		D87C08BB248F76420097DC8A /* NetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
 		D87C08BD248F765B0097DC8A /* HomeDataStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataStruct.swift; sourceTree = "<group>"; };
+		D87C08BF248FB2580097DC8A /* SampleDataStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDataStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				D87C08A7248F70000097DC8A /* AppDelegate.swift */,
 				D87C08B9248F70790097DC8A /* PostCallHomeController.swift */,
 				D87C08BD248F765B0097DC8A /* HomeDataStruct.swift */,
+				D87C08BF248FB2580097DC8A /* SampleDataStruct.swift */,
 				D87C08BB248F76420097DC8A /* NetworkHandler.swift */,
 				D87C08AB248F70000097DC8A /* Main.storyboard */,
 				D87C08AE248F70010097DC8A /* Assets.xcassets */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D87C08BA248F70790097DC8A /* PostCallHomeController.swift in Sources */,
+				D87C08C0248FB2580097DC8A /* SampleDataStruct.swift in Sources */,
 				D87C08A8248F70000097DC8A /* AppDelegate.swift in Sources */,
 				D87C08BC248F76420097DC8A /* NetworkHandler.swift in Sources */,
 				D87C08BE248F765B0097DC8A /* HomeDataStruct.swift in Sources */,

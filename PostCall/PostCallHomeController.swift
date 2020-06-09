@@ -7,7 +7,7 @@
 //
 
 import UIKit
-let jsonUrl = "https://postman-echo.com/get?foo1=bar1&foo2=bar2%27"
+let jsonUrl = "https://jsonplaceholder.typicode.com/todos"
 class PostCallHomeController: UIViewController,NetworkHandlerDeligate {
     func hitApi(dataGet: Any) {
         

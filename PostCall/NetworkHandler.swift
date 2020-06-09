@@ -19,13 +19,14 @@ var networkDeligate: NetworkHandlerDeligate!
     func getApi(url: String, dataStruct: PostType)
 {
     //print("jkkjkjkjkjkjkjkj", url)
+    
     let configuration = URLSessionConfiguration.default
     let session = URLSession(configuration: configuration)
     let apiurl = URL(string: url)
     var request: URLRequest = URLRequest(url: apiurl!)
     request.httpMethod = "POST"
-    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-    request.addValue("application/json", forHTTPHeaderField: "Accept")
+    request.addValue("userId", forHTTPHeaderField: "1")
+    request.addValue("id", forHTTPHeaderField: "1")
     
     
     let postDataGet = session.dataTask(with: apiurl!) { data, response, error in
@@ -37,11 +38,29 @@ var networkDeligate: NetworkHandlerDeligate!
             switch (httpresponse.statusCode)
             {
             case 200: print("success")
+            print(">>>>>>>>>", received)
+                switch dataStruct
+                {
+                case PostType.postSample:
+                    do
+                    {
+                    let parsedData = try JSONDecoder().decode(SampleDataStruct.self, from: received)
+                        print("Decoded Data", parsedData.data)
+                        self.networkDeligate.hitApi(dataGet: parsedData)
+                    }
+                    catch {
+                        print("Decoding Failed")
+                    }
+                    break
+                    
+                    
+                }
+            
                 break
-            case 400: print("failed")
+            case 400: print("moonji")
                 break
             default:
-                print("failed")
+                print("fucked failed")
                 break
         }
     }
