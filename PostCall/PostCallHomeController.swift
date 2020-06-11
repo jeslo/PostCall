@@ -7,11 +7,10 @@
 //
 
 import UIKit
-let jsonUrl = "https://jsonplaceholder.typicode.com/todos"
+let jsonUrl = "https://reqres.in/api/register"
 class PostCallHomeController: UIViewController,NetworkHandlerDeligate {
-    func hitApi(dataGet: Any) {
-        
-    }
+    var list : Datum!
+   
     
 
     @IBOutlet weak var homeID: UILabel!
@@ -30,8 +29,14 @@ class PostCallHomeController: UIViewController,NetworkHandlerDeligate {
         self.netWorkCall.networkDeligate = self
         self.netWorkCall.getApi(url: jsonUrl, dataStruct: PostType.postSample)
         
+        
     }
     
-
+    func hitApi(dataGet: Any) {
+        let dd = dataGet as! HomeDataStruct
+        for (, age) in ages 
+        print("ID", dd.data[5].id, "Name" ,dd.data[5].name)
+    }
+    
 
 }

@@ -1,10 +1,3 @@
-//
-//  NetworkHandler.swift
-//  PostCall
-//
-//  Created by Joe on 09/06/20.
-//  Copyright © 2020 jess. All rights reserved.
-//
 
 import Foundation
 enum PostType {
@@ -18,15 +11,22 @@ class NetworkHandler
 var networkDeligate: NetworkHandlerDeligate!
     func getApi(url: String, dataStruct: PostType)
 {
-    //print("jkkjkjkjkjkjkjkj", url)
     
-    let configuration = URLSessionConfiguration.default
-    let session = URLSession(configuration: configuration)
+    let parameters = [
+        "email": "eve.holt@reqres.in",
+        "password": "pistol"]
+    print("Original Parameters", parameters)
     let apiurl = URL(string: url)
-    var request: URLRequest = URLRequest(url: apiurl!)
+    
+    var request = URLRequest(url: apiurl!)
     request.httpMethod = "POST"
-    request.addValue("userId", forHTTPHeaderField: "1")
-    request.addValue("id", forHTTPHeaderField: "1")
+    guard let httpBody = try? JSONEncoder().encode(parameters) else {return}
+    
+    request.httpBody = httpBody
+    let session = URLSession.shared
+
+    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.addValue("application/json", forHTTPHeaderField: "Accept")
     
     
     let postDataGet = session.dataTask(with: apiurl!) { data, response, error in
@@ -44,7 +44,7 @@ var networkDeligate: NetworkHandlerDeligate!
                 case PostType.postSample:
                     do
                     {
-                    let parsedData = try JSONDecoder().decode(SampleDataStruct.self, from: received)
+                    let parsedData = try JSONDecoder().decode(HomeDataStruct.self, from: received)
                         print("Decoded Data", parsedData.data)
                         self.networkDeligate.hitApi(dataGet: parsedData)
                     }
@@ -55,12 +55,9 @@ var networkDeligate: NetworkHandlerDeligate!
                     
                     
                 }
-            
-                break
-            case 400: print("moonji")
                 break
             default:
-                print("fucked failed")
+                print("failed")
                 break
         }
     }

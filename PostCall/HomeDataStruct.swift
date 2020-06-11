@@ -1,19 +1,41 @@
+// This file was generated from JSON Schema using quicktype, do not modify it directly.
+// To parse the JSON, add this file to your project and do:
 //
-//  HomeDataStruct.swift
-//  PostCall
-//
-//  Created by Joe on 09/06/20.
-//  Copyright © 2020 jess. All rights reserved.
-//
+//   let welcome = try? newJSONDecoder().decode(Welcome.self, from: jsonData)
 
-//import Foundation
-//struct HomeDataStruct: Codable {
-//    var status: Bool
-//    var data: data
-//    }
-//struct data: Codable{
-//    var name: String
-//    var salary: String
-//    var age: String
-//    var id: Int
-//}
+import Foundation
+
+// MARK: - Welcome
+struct HomeDataStruct: Codable {
+    let page, perPage, total, totalPages: Int
+    let data: [Datum]
+    let ad: Ad
+    
+    enum CodingKeys: String, CodingKey {
+        case page
+        case perPage = "per_page"
+        case total
+        case totalPages = "total_pages"
+        case data, ad
+    }
+}
+
+// MARK: - Ad
+struct Ad: Codable {
+    let company: String
+    let url: String
+    let text: String
+}
+
+// MARK: - Datum
+struct Datum: Codable {
+    let id: Int
+    let name: String
+    let year: Int
+    let color, pantoneValue: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id, name, year, color
+        case pantoneValue = "pantone_value"
+    }
+}

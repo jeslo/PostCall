@@ -9,29 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PostCall/NetworkHandler.swift"
-            timestampString = "613404009.456414"
+            filePath = "PostCall/PostCallHomeController.swift"
+            timestampString = "613565552.53584"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "getApi(url:dataStruct:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PostCall/NetworkHandler.swift"
-            timestampString = "613404009.458423"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "getApi(url:dataStruct:)"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "hitApi(dataGet:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
